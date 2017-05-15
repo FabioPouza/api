@@ -3,7 +3,7 @@ $( document ).ready(function(){
 });
 
 $('#btnEnviar').click(function(){
-  Materialize.toast('Cadastrado com sucesso!', 3000, 'rounded');
+  Materialize.toast('Cadastrado com sucesso', 3000, 'rounded');
 });
 
 $('#cadastro').on("submit" ,function(e){
