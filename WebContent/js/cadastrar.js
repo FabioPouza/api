@@ -2,17 +2,30 @@ $( document ).ready(function(){
   $(".button-collapse").sideNav();
 });
 
-$('#btnEnviar').click(function(){
-  Materialize.toast('Cadastrado com sucesso', 3000, 'rounded');
-});
+var cliente = function (nome, email, cep){
+    this.nome = nome;
+    this.email = email;
+    this.cep = cep;
 
-$('#cadastro').on("submit" ,function(e){
-  e.preventDefault();
-    $.ajax({
-      url: 'cadastrar.html',
-      cache: false,
-      type: "POST",
-      success: function(){
+      this.getJson = function(){
+        var cliente = this;
+        return JSON.stringify(cliente);
       }
-    })
+};
+
+
+$('#document').ready(function(){
+  $('#btnEnviar').click(function(){
+      var cliente = new cliente($('#txtNome').val(), $('#txtEmail').val(), $('#txtCep').val());
+      $.ajax({
+        url: '/cadastrar',
+        type: 'POST',
+        dataType: 'text',
+        contentType: 'application/json',
+        data: cliente.getJson(),
+        success: function(){
+          console.log('Foi');
+        }
+      });
+  });
 });
