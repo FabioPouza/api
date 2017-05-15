@@ -1,0 +1,29 @@
+@font-face{
+  font-family: Calling-Angels-Personal-Use;
+  src: url("fonts/Calling-Angels-Personal-Use.ttf") format("truetype");
+}
+
+nav .brand-logo{
+  font-weight: 300;
+  padding-left: 10px;
+  color: black;
+  font-size: 40px;
+}
+
+nav ul a{
+  font-weight: 300;
+  color: black;
+}
+
+.alinhamento{
+  padding-top: 100px;
+}
+
+#btn{
+  text-align: center;
+}
+
+nav i.material-icons{
+
+  font-size: 30px;
+}
