@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 public class Cliente {
 
@@ -19,10 +21,12 @@ public class Cliente {
 		return id;
 	}
 
+	@JsonProperty("nome")
 	public String getNome() {
 		return nome;
 	}
 
+	@JsonProperty("nome")
 	public void setNome(String nome) {
 		this.nome = nome;
 	}

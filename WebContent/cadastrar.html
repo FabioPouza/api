@@ -25,7 +25,7 @@
     </nav>
 
     <div class="row alinhamento">
-      <form class="col s12" method="get" id="cadastro">
+      <form class="col s12" method="post" id="cadastro">
         <div class="row">
           <div class="input-field col s4 offset-s4">
             <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate txt" name="nome">
@@ -44,15 +44,15 @@
             <label for="txtCep">Cep</label>
           </div>
         </div>
-        <div id="btn">
-          <button class="btn waves-effect waves-light" type="submit" id="btnEnviar" name="action">Salvar
-            <i class="material-icons right">send</i>
-          </button>
-          <button class="btn waves-effect waves-light" id="btnApagar" name="action">Apagar
-            <i class="material-icons right">close</i>
-          </button>
-        </div>
       </form>
+      <div id="btn">
+        <button class="btn waves-effect waves-light" type="submit" id="btnEnviar">Salvar
+          <i class="material-icons right">send</i>
+        </button>
+        <button class="btn waves-effect waves-light" id="btnApagar">Apagar
+          <i class="material-icons right">close</i>
+        </button>
+      </div>
     </div>
   </body>
   <script src="js/jquery-3.2.0.min.js"></script>

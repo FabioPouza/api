@@ -2,7 +2,7 @@ $( document ).ready(function(){
   $(".button-collapse").sideNav();
 });
 
-var cliente = function (nome, email, cep){
+function Cliente(nome, email, cep){
     this.nome = nome;
     this.email = email;
     this.cep = cep;
@@ -15,16 +15,18 @@ var cliente = function (nome, email, cep){
 
 
 $('#document').ready(function(){
-  $('#btnEnviar').click(function(){
-      var cliente = new cliente($('#txtNome').val(), $('#txtEmail').val(), $('#txtCep').val());
+  $('#btnEnviar').click(function(e){
+      var cliente = new Cliente($('#txtNome').val(), $('#txtEmail').val(), $('#txtCep').val());
+      var mydata = cliente.getJson();
+      e.preventDefault();
       $.ajax({
-        url: '/cadastrar',
-        type: 'POST',
+        url: '/api/cadastrar',
+        type: "POST",
         dataType: 'text',
         contentType: 'application/json',
-        data: cliente.getJson(),
+        data: mydata,
         success: function(){
-          console.log('Foi');
+            console.log('teste');
         }
       });
   });
