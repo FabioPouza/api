@@ -14,7 +14,7 @@ function Cliente(nome, email, cep){
 };
 
 
-$('#document').ready(function(){
+$(document).ready(function(){
   $('#btnEnviar').click(function(e){
       var cliente = new Cliente($('#txtNome').val(), $('#txtEmail').val(), $('#txtCep').val());
       var mydata = cliente.getJson();
@@ -26,7 +26,7 @@ $('#document').ready(function(){
         contentType: 'application/json',
         data: mydata,
         success: function(){
-            console.log('teste');
+        Apagar();
         }
       });
   });
