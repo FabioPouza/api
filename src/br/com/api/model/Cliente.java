@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
+@Entity(name="Clientes")
 public class Cliente {
 
 	@Id
@@ -15,7 +15,17 @@ public class Cliente {
 	private int id;
 	private String nome;
 	private String email;
-	private int cep;
+	private String cep;
+	
+	public Cliente(String nome, String email, String cep) {
+		this.nome = nome;
+		this.email = email;
+		this.cep = cep;
+	}
+	
+	public Cliente() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getId() {
 		return id;
@@ -30,20 +40,24 @@ public class Cliente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
+	@JsonProperty("email")
 	public String getEmail() {
 		return email;
 	}
 
+	@JsonProperty("email")
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public int getCep() {
+	@JsonProperty("cep")
+	public String getCep() {
 		return cep;
 	}
 
-	public void setCep(int cep) {
+	@JsonProperty("cep")
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
 

@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 public class JpaUtil {
 
 	private static EntityManagerFactory entityManagerFactory = Persistence
-			.createEntityManagerFactory("cliente");
+			.createEntityManagerFactory("clientes");
 	
 	public EntityManager getEntityManager(){
 		

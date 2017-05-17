@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import br.com.api.dao.CadastrarCliente;
 import br.com.api.model.Cliente;
 
 /**
@@ -24,18 +25,7 @@ import br.com.api.model.Cliente;
 public class Cadastrar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public Cadastrar() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -61,8 +51,11 @@ public class Cadastrar extends HttpServlet {
 		try {
 			JSONObject jsonObject = HTTP.toJSONObject(jb.toString());
 			ObjectMapper mapper = new ObjectMapper();
-			Cliente obj = mapper.readValue(jb.toString(), Cliente.class);
-			System.out.println(obj.getNome());
+			Cliente cliente = mapper.readValue(jb.toString(), Cliente.class);
+			CadastrarCliente cad = new CadastrarCliente();
+			cad.salvar(cliente);
+			System.out.println(cliente.getNome());
+			System.out.println(cliente.getEmail());
 		} catch (JSONException e) {
 			// crash and burn
 			throw new IOException("Error parsing JSON request string");
