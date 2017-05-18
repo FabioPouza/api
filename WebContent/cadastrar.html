@@ -34,29 +34,31 @@
         </div>
         <div class="row">
           <div class="input-field col s4 offset-s4">
-            <input id="txtEmail" type="email" class="validate txt" name="email">
+            <input id="txtEmail" type="email" class="validate txt" name="email" required="true">
             <label for="txtEmail">Email</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s4 offset-s4">
-            <input id="txtCep" type="text" class="validate txt" name="cep">
+            <input id="txtCep" type="text" class="validate txt" name="cep" required="true">
             <label for="txtCep">Cep</label>
           </div>
         </div>
+        <div id="btn">
+          <button class="btn waves-effect waves-light" id="btnEnviar" type="submit">Salvar
+            <i class="material-icons right">send</i>
+          </button>
+          <button class="btn waves-effect waves-light" id="btnApagar" type="reset">Apagar
+            <i class="material-icons right">close</i>
+          </button>
+        </div>
       </form>
-      <div id="btn">
-        <button class="btn waves-effect waves-light" type="submit" id="btnEnviar">Salvar
-          <i class="material-icons right">send</i>
-        </button>
-        <button class="btn waves-effect waves-light" id="btnApagar">Apagar
-          <i class="material-icons right">close</i>
-        </button>
-      </div>
     </div>
   </body>
   <script src="js/jquery-3.2.0.min.js"></script>
   <script src="js/materialize.js"></script>
+  <script src="js/jquery-validate.js"></script>
+  <script src="js/jquery-mask.js"></script>
   <script src="js/apagar.js"></script>
   <script src="js/cadastrar.js"></script>
 </html>
