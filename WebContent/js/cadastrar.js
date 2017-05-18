@@ -1,3 +1,7 @@
+import * as validacao from "./validacao.js";
+
+console.log(validacao);
+
 $(document).ready(function(){
   $(".button-collapse").sideNav();
 });
@@ -28,11 +32,11 @@ $(document).ready(function(){
         data: mydata,
         success: function(){
         Materialize.toast('Cadastrado com sucesso!', 3000, 'rounded');
-        Apagar();
+        apagar();
         }
       });
   });
   $('#btnApagar').click(function(){
-    Apagar();
+    apagar();
   });
 });

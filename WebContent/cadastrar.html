@@ -28,24 +28,24 @@
       <form class="col s12" method="post" id="cadastro">
         <div class="row">
           <div class="input-field col s4 offset-s4">
-            <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate txt" name="nome">
+            <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate txt" name="nome" required="required">
             <label for="txtNome">Nome</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s4 offset-s4">
-            <input id="txtEmail" type="email" class="validate txt" name="email" required="true">
+            <input id="txtEmail" type="email" class="validate txt" name="email" required="required">
             <label for="txtEmail">Email</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s4 offset-s4">
-            <input id="txtCep" type="text" class="validate txt" name="cep" required="true">
+            <input id="txtCep" type="text" class="validate txt" name="cep" required="required">
             <label for="txtCep">Cep</label>
           </div>
         </div>
         <div id="btn">
-          <button class="btn waves-effect waves-light" id="btnEnviar" type="submit">Salvar
+          <button class="btn waves-effect waves-light" id="btnEnviar" onsubmit="enviar()">Salvar
             <i class="material-icons right">send</i>
           </button>
           <button class="btn waves-effect waves-light" id="btnApagar" type="reset">Apagar
@@ -57,8 +57,9 @@
   </body>
   <script src="js/jquery-3.2.0.min.js"></script>
   <script src="js/materialize.js"></script>
-  <script src="js/jquery-validate.js"></script>
   <script src="js/jquery-mask.js"></script>
   <script src="js/apagar.js"></script>
+  <script src="js/string-validator.js"></script>
+  <script src="js/validacao.js"></script>
   <script src="js/cadastrar.js"></script>
 </html>
