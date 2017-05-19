@@ -25,27 +25,27 @@
     </nav>
 
     <div class="row alinhamento">
-      <form class="col s12" method="post" id="cadastro">
+      <form class="col s12" id="cadastro">
         <div class="row">
           <div class="input-field col s4 offset-s4">
-            <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate txt" name="nome" required="required">
+            <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate txt" name="nome">
             <label for="txtNome">Nome</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s4 offset-s4">
-            <input id="txtEmail" type="email" class="validate txt" name="email" required="required">
+            <input id="txtEmail" type="email" class="validate txt" name="email">
             <label for="txtEmail">Email</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s4 offset-s4">
-            <input id="txtCep" type="text" class="validate txt" name="cep" required="required">
+            <input id="txtCep" type="text" class="validate txt" name="cep">
             <label for="txtCep">Cep</label>
           </div>
         </div>
         <div id="btn">
-          <button class="btn waves-effect waves-light" id="btnEnviar" onsubmit="enviar()">Salvar
+          <button class="btn waves-effect waves-light" id="btnEnviar" type="button">Salvar
             <i class="material-icons right">send</i>
           </button>
           <button class="btn waves-effect waves-light" id="btnApagar" type="reset">Apagar

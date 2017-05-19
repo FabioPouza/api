@@ -1,27 +1,28 @@
-import * as validacao from "./validacao.js";
-
-console.log(validacao);
-
-$(document).ready(function(){
+$(document).ready(function () {
   $(".button-collapse").sideNav();
-});
 
-function Cliente(nome, email, cep){
+  function Cliente(nome, email, cep) {
     this.nome = nome;
     this.email = email;
     this.cep = cep;
 
-      this.getJson = function(){
-        var cliente = this;
-        return JSON.stringify(cliente);
-      }
-};
+    this.getJson = function () {
+      var cliente = this;
+      return JSON.stringify(cliente);
+    }
+  };
 
-
-$(document).ready(function(){
+  
+  var email = $('#txtEmail').val();
+  var cep = $('#txtCep').val();
   $('#txtCep').mask('00000-000');
-  $('#btnEnviar').click(function(e){
-      var cliente = new Cliente($('#txtNome').val(), $('#txtEmail').val(), $('#txtCep').cleanVal());
+
+  $('#btnEnviar').click(function (e) {
+    var nome = $('#txtNome').val();
+    var erros = clienteValidator.isValid(nome);
+    if (erros.length === 0) {
+      console.log('if');
+      var cliente = new Cliente(nome, email, cep);
       var mydata = cliente.getJson();
       e.preventDefault();
       $.ajax({
@@ -30,13 +31,20 @@ $(document).ready(function(){
         dataType: 'text',
         contentType: 'application/json',
         data: mydata,
-        success: function(){
-        Materialize.toast('Cadastrado com sucesso!', 3000, 'rounded');
-        apagar();
+        success: function () {
+          Materialize.toast('Cadastrado com sucesso!', 3000, 'rounded');
+          apagar();
         }
       });
+    }
+    else {
+
+      console.log(erros);
+    }
   });
-  $('#btnApagar').click(function(){
+
+
+  $('#btnApagar').click(function () {
     apagar();
   });
 });
