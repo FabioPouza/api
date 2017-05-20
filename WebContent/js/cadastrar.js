@@ -13,12 +13,13 @@ $(document).ready(function () {
   };
 
   
-  var email = $('#txtEmail').val();
-  var cep = $('#txtCep').val();
+  
   $('#txtCep').mask('00000-000');
 
   $('#btnEnviar').click(function (e) {
     var nome = $('#txtNome').val();
+    var email = $('#txtEmail').val();
+    var cep = $('#txtCep').cleanVal();
     var erros = clienteValidator.isValid(nome);
     if (erros.length === 0) {
       console.log('if');
