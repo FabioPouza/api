@@ -20,9 +20,8 @@ $(document).ready(function () {
     var nome = $('#txtNome').val();
     var email = $('#txtEmail').val();
     var cep = $('#txtCep').cleanVal();
-    var erros = clienteValidator.isValid(nome);
-    if (erros.length === 0) {
-      console.log('if');
+    var erros = [nomeValidator.isValid(nome), emailValidator.isValid(email), cepValidator.isValid(cep)];
+    if (erros[0].length == 0 && erros[1] == 0 && erros[2] == 0) {
       var cliente = new Cliente(nome, email, cep);
       var mydata = cliente.getJson();
       e.preventDefault();
@@ -39,12 +38,9 @@ $(document).ready(function () {
       });
     }
     else {
-
-      console.log(erros);
+      Materialize.toast('Preencha os campos corretamente', 3000, 'rounded erros');
     }
   });
-
-
   $('#btnApagar').click(function () {
     apagar();
   });

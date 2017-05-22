@@ -42,5 +42,9 @@ nav ul a{
 }
 nav i.material-icons{
 
-  font-size: 30px;
+  font-size: 25px;
+}
+
+.erros{
+  background-color: #ef5350;
 }

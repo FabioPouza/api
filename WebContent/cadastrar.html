@@ -14,12 +14,12 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">Cadastro<i class="small material-icons left">save</i></a></li>
         <li><a href="#">Teste</a></li>
-        <li><a href="#">JavaScript</a></li>
+        <li><a href="#">Sair<i class="small material-icons left">exit_to_app</i></a></li>
       </ul>
       <ul id="mobile-demo" class="side-nav">
         <li><a href="#">Cadastro</a></li>
         <li><a href="#">Teste</a></li>
-        <li><a href="#">JavaScript</a></li>
+        <li><a href="#">Sair</a></li>
       </ul>
     </div>
   </nav>
@@ -28,14 +28,14 @@
     <form class="col s12" id="cadastro">
       <div class="row">
         <div class="input-field col s4 offset-s4">
-          <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate txt" name="nome">
-          <label for="txtNome">Nome</label>
+          <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate" name="nome" pattern="^[a-zA-Z\s]+$" />
+          <label for="txtNome" data-error="Nome Invalido">Nome</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s4 offset-s4">
-          <input id="txtEmail" type="email" class="validate txt" name="email">
-          <label for="txtEmail">Email</label>
+          <input id="txtEmail" type="email" class="validate" name="email">
+          <label for="txtEmail" data-error="Email Invalido">Email</label>
         </div>
       </div>
       <div class="row">
