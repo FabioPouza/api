@@ -12,8 +12,8 @@ $(document).ready(function () {
     }
   };
 
-  
-  
+
+
   $('#txtCep').mask('00000-000');
 
   $('#btnEnviar').click(function (e) {

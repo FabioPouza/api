@@ -1,0 +1,17 @@
+.alinhado{
+    text-align: center;
+    left: 65%;
+    padding-top: 20%;
+}
+
+.font{
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.loading{
+    position:absolute;
+    left:50%;
+    margin-top:-50px;
+    margin-left:-50px;
+}
