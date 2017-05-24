@@ -49,6 +49,7 @@ public class Cadastrar extends HttpServlet {
 			/* report an error */ }
 
 		try {
+			// Pega json
 			JSONObject jsonObject = HTTP.toJSONObject(jb.toString());
 			ObjectMapper mapper = new ObjectMapper();
 			Cliente cliente = mapper.readValue(jb.toString(), Cliente.class);
